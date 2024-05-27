@@ -10,6 +10,10 @@ const AuthController = require("../controllers/admin/auth.controller");
 
 const ServiceTypeController = require("../controllers/admin/servicetype.controller");
 
+// user authentication
+adminRouter.post("/login",  AuthController.login);
+adminRouter.post("/register",  AuthController.Register);
+
 //  ServiceTypeController Start
 adminRouter.post("/fetch-service-types",  ServiceTypeController.fetchServiceTypes);
 adminRouter.get("/fetch-service-types",  ServiceTypeController.fetchServiceTypes);

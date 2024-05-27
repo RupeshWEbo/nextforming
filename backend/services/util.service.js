@@ -1,5 +1,13 @@
+const { to } = require("await-to-js");
 const pe = require("parse-error");
 
+module.exports.to = async (promise) => {
+  let err, res;
+  [err, res] = await to(promise);
+  if (err) return [pe(err)];
+
+  return [null, res];
+};
 module.exports.ReE = function (res, data, code) {
   // Error Web Response
   let send_data = { success: false };
